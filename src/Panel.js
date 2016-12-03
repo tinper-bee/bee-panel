@@ -12,11 +12,17 @@ const propTypes = {
   onSelect: React.PropTypes.func,
   //头部组件
   header: React.PropTypes.node,
+  headerStyle: React.PropTypes.oneOfType([
+    React.PropTypes.string, React.PropTypes.object
+  ]),
   id: React.PropTypes.oneOfType([
     React.PropTypes.string, React.PropTypes.number,
   ]),
   //footer组件
   footer: React.PropTypes.node,
+  footerStyle: React.PropTypes.oneOfType([
+    React.PropTypes.string, React.PropTypes.object
+  ]),
   //默认是否打开
   defaultExpanded: React.PropTypes.bool,
   //是否打开
@@ -183,6 +189,8 @@ class Panel extends React.Component {
       id,
       footer,
       expanded: propsExpanded,
+      footerStyle,
+      headerStyle,
       headerRole,
       panelRole,
       className,
@@ -216,7 +224,7 @@ class Panel extends React.Component {
         id={collapsible ? null : id}
       >
         {header && (
-          <div className={`${clsPrefix}-heading`}>
+          <div className={`${clsPrefix}-heading`} style={headerStyle}>
             {this.renderHeader(
               collapsible, header, id, headerRole, expanded, clsPrefix
             )}
@@ -232,7 +240,7 @@ class Panel extends React.Component {
         }
 
         {footer && (
-          <div className={`${clsPrefix}-footer`}>
+          <div className={`${clsPrefix}-footer`} style={footerStyle}>
             {footer}
           </div>
         )}

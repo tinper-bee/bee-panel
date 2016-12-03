@@ -34,9 +34,11 @@ var propTypes = {
   onSelect: _react2["default"].PropTypes.func,
   //头部组件
   header: _react2["default"].PropTypes.node,
+  headerStyle: _react2["default"].PropTypes.oneOfType([_react2["default"].PropTypes.string, _react2["default"].PropTypes.object]),
   id: _react2["default"].PropTypes.oneOfType([_react2["default"].PropTypes.string, _react2["default"].PropTypes.number]),
   //footer组件
   footer: _react2["default"].PropTypes.node,
+  footerStyle: _react2["default"].PropTypes.oneOfType([_react2["default"].PropTypes.string, _react2["default"].PropTypes.object]),
   //默认是否打开
   defaultExpanded: _react2["default"].PropTypes.bool,
   //是否打开
@@ -218,6 +220,8 @@ var Panel = function (_React$Component) {
         id = _props.id,
         footer = _props.footer,
         propsExpanded = _props.expanded,
+        footerStyle = _props.footerStyle,
+        headerStyle = _props.headerStyle,
         headerRole = _props.headerRole,
         panelRole = _props.panelRole,
         className = _props.className,
@@ -233,7 +237,7 @@ var Panel = function (_React$Component) {
         defaultExpanded = _props.defaultExpanded,
         eventKey = _props.eventKey,
         onSelect = _props.onSelect,
-        props = _objectWithoutProperties(_props, ['collapsible', 'header', 'id', 'footer', 'expanded', 'headerRole', 'panelRole', 'className', 'colors', 'children', 'onEnter', 'onEntering', 'onEntered', 'clsPrefix', 'onExit', 'onExiting', 'onExited', 'defaultExpanded', 'eventKey', 'onSelect']);
+        props = _objectWithoutProperties(_props, ['collapsible', 'header', 'id', 'footer', 'expanded', 'footerStyle', 'headerStyle', 'headerRole', 'panelRole', 'className', 'colors', 'children', 'onEnter', 'onEntering', 'onEntered', 'clsPrefix', 'onExit', 'onExiting', 'onExited', 'defaultExpanded', 'eventKey', 'onSelect']);
 
     var expanded = propsExpanded != null ? propsExpanded : this.state.expanded;
 
@@ -249,13 +253,13 @@ var Panel = function (_React$Component) {
       }),
       header && _react2["default"].createElement(
         'div',
-        { className: clsPrefix + '-heading' },
+        { className: clsPrefix + '-heading', style: headerStyle },
         this.renderHeader(collapsible, header, id, headerRole, expanded, clsPrefix)
       ),
       collapsible ? this.renderCollapsibleBody(id, expanded, panelRole, children, clsPrefix, { onEnter: onEnter, onEntering: onEntering, onEntered: onEntered, onExit: onExit, onExiting: onExiting, onExited: onExited }) : this.renderBody(children, clsPrefix),
       footer && _react2["default"].createElement(
         'div',
-        { className: clsPrefix + '-footer' },
+        { className: clsPrefix + '-footer', style: footerStyle },
         footer
       )
     );
