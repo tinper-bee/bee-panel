@@ -12,17 +12,13 @@ const propTypes = {
   onSelect: React.PropTypes.func,
   //头部组件
   header: React.PropTypes.node,
-  headerStyle: React.PropTypes.oneOfType([
-    React.PropTypes.string, React.PropTypes.object
-  ]),
+  headerStyle: React.PropTypes.object,
   id: React.PropTypes.oneOfType([
     React.PropTypes.string, React.PropTypes.number,
   ]),
   //footer组件
   footer: React.PropTypes.node,
-  footerStyle: React.PropTypes.oneOfType([
-    React.PropTypes.string, React.PropTypes.object
-  ]),
+  footerStyle: React.PropTypes.object,
   //默认是否打开
   defaultExpanded: React.PropTypes.bool,
   //是否打开
