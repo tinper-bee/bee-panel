@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import classnames from 'classnames';
 import React, { cloneElement } from 'react';
 
 import { Collapse } from 'bee-transition';
@@ -16,6 +16,7 @@ const propTypes = {
   id: React.PropTypes.oneOfType([
     React.PropTypes.string, React.PropTypes.number,
   ]),
+  headerContent: React.PropTypes.bool,
   //footer组件
   footer: React.PropTypes.node,
   footerStyle: React.PropTypes.object,
@@ -83,7 +84,7 @@ class Panel extends React.Component {
       }
 
       return cloneElement(header, {
-        className: classNames(header.props.className, titleClassName),
+        className: classnames(header.props.className, titleClassName),
       });
     }
 
@@ -94,9 +95,14 @@ class Panel extends React.Component {
         </h4>
       );
     }
+    if(this.props.headerContent){
+        return cloneElement(header, {
+          className: classnames(header.props.className, titleClassName),
+        });
+    }
 
     return cloneElement(header, {
-      className: classNames(header.props.className, titleClassName),
+      className: classnames(header.props.className, titleClassName),
       children: this.renderAnchor(header.props.children, id, role, expanded),
     });
   }
@@ -197,6 +203,7 @@ class Panel extends React.Component {
       onEntered,
       clsPrefix,
       onExit,
+      style,
       onExiting,
       onExited,
       defaultExpanded,
@@ -213,14 +220,18 @@ class Panel extends React.Component {
     classes[`${clsPrefix}`] = true;
     classes[`${clsPrefix}-${colors}`] = true;
 
+    const headerClass = {
+        [`${clsPrefix}-heading`] : true
+    }
+
     return (
       <div
         {...props}
-        className={classNames(className, classes)}
+        className={classnames(className, classes)}
         id={collapsible ? null : id}
       >
         {header && (
-          <div className={`${clsPrefix}-heading`} style={headerStyle}>
+          <div className={classnames(headerClass)} style={headerStyle}>
             {this.renderHeader(
               collapsible, header, id, headerRole, expanded, clsPrefix
             )}

@@ -76,7 +76,7 @@ import "./node_modules/bee-panel/build/Panel.css"
 #### Panel
 
 |参数|说明|类型|默认值|
-|:--|:---:|:--:|---:|
+|:---|:-----|:----|:------|
 |collapsible|是否添加折叠|boolean|-|
 |onSelect|有折叠效果时选中的效果|function|-|
 |defaultExpanded|默认是否打开|boolean|false|
@@ -97,7 +97,7 @@ import "./node_modules/bee-panel/build/Panel.css"
 #### PanelGroup
 
 |参数|说明|类型|默认值|
-|:--|:---:|:--:|---:|
+|:---|:-----|:----|:------|
 |accordion|是否是手风琴效果|boolean|false|
 |activeKey|当前展开的项|any|-|
 |defaultActiveKey|默认展开的项|any|-|

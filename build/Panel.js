@@ -20,6 +20,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 
 function _defaults(obj, defaults) { var keys = Object.getOwnPropertyNames(defaults); for (var i = 0; i < keys.length; i++) { var key = keys[i]; var value = Object.getOwnPropertyDescriptor(defaults, key); if (value && value.configurable && obj[key] === undefined) { Object.defineProperty(obj, key, value); } } return obj; }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -36,6 +38,7 @@ var propTypes = {
   header: _react2["default"].PropTypes.node,
   headerStyle: _react2["default"].PropTypes.object,
   id: _react2["default"].PropTypes.oneOfType([_react2["default"].PropTypes.string, _react2["default"].PropTypes.number]),
+  headerContent: _react2["default"].PropTypes.bool,
   //footer组件
   footer: _react2["default"].PropTypes.node,
   footerStyle: _react2["default"].PropTypes.object,
@@ -122,6 +125,11 @@ var Panel = function (_React$Component) {
         { role: 'presentation', className: titleClassName },
         this.renderAnchor(header, id, role, expanded)
       );
+    }
+    if (this.props.headerContent) {
+      return (0, _react.cloneElement)(header, {
+        className: (0, _classnames2["default"])(header.props.className, titleClassName)
+      });
     }
 
     return (0, _react.cloneElement)(header, {
@@ -214,37 +222,39 @@ var Panel = function (_React$Component) {
   };
 
   Panel.prototype.render = function render() {
-    var _props = this.props;
-    var collapsible = _props.collapsible;
-    var header = _props.header;
-    var id = _props.id;
-    var footer = _props.footer;
-    var propsExpanded = _props.expanded;
-    var footerStyle = _props.footerStyle;
-    var headerStyle = _props.headerStyle;
-    var headerRole = _props.headerRole;
-    var panelRole = _props.panelRole;
-    var className = _props.className;
-    var colors = _props.colors;
-    var children = _props.children;
-    var onEnter = _props.onEnter;
-    var onEntering = _props.onEntering;
-    var onEntered = _props.onEntered;
-    var clsPrefix = _props.clsPrefix;
-    var onExit = _props.onExit;
-    var onExiting = _props.onExiting;
-    var onExited = _props.onExited;
-    var defaultExpanded = _props.defaultExpanded;
-    var eventKey = _props.eventKey;
-    var onSelect = _props.onSelect;
-
-    var props = _objectWithoutProperties(_props, ['collapsible', 'header', 'id', 'footer', 'expanded', 'footerStyle', 'headerStyle', 'headerRole', 'panelRole', 'className', 'colors', 'children', 'onEnter', 'onEntering', 'onEntered', 'clsPrefix', 'onExit', 'onExiting', 'onExited', 'defaultExpanded', 'eventKey', 'onSelect']);
+    var _props = this.props,
+        collapsible = _props.collapsible,
+        header = _props.header,
+        id = _props.id,
+        footer = _props.footer,
+        propsExpanded = _props.expanded,
+        footerStyle = _props.footerStyle,
+        headerStyle = _props.headerStyle,
+        headerRole = _props.headerRole,
+        panelRole = _props.panelRole,
+        className = _props.className,
+        colors = _props.colors,
+        children = _props.children,
+        onEnter = _props.onEnter,
+        onEntering = _props.onEntering,
+        onEntered = _props.onEntered,
+        clsPrefix = _props.clsPrefix,
+        onExit = _props.onExit,
+        style = _props.style,
+        onExiting = _props.onExiting,
+        onExited = _props.onExited,
+        defaultExpanded = _props.defaultExpanded,
+        eventKey = _props.eventKey,
+        onSelect = _props.onSelect,
+        props = _objectWithoutProperties(_props, ['collapsible', 'header', 'id', 'footer', 'expanded', 'footerStyle', 'headerStyle', 'headerRole', 'panelRole', 'className', 'colors', 'children', 'onEnter', 'onEntering', 'onEntered', 'clsPrefix', 'onExit', 'style', 'onExiting', 'onExited', 'defaultExpanded', 'eventKey', 'onSelect']);
 
     var expanded = propsExpanded != null ? propsExpanded : this.state.expanded;
 
     var classes = {};
     classes['' + clsPrefix] = true;
     classes[clsPrefix + '-' + colors] = true;
+
+    var headerClass = _defineProperty({}, clsPrefix + '-heading', true);
 
     return _react2["default"].createElement(
       'div',
@@ -254,7 +264,7 @@ var Panel = function (_React$Component) {
       }),
       header && _react2["default"].createElement(
         'div',
-        { className: clsPrefix + '-heading', style: headerStyle },
+        { className: (0, _classnames2["default"])(headerClass), style: headerStyle },
         this.renderHeader(collapsible, header, id, headerRole, expanded, clsPrefix)
       ),
       collapsible ? this.renderCollapsibleBody(id, expanded, panelRole, children, clsPrefix, { onEnter: onEnter, onEntering: onEntering, onEntered: onEntered, onExit: onExit, onExiting: onExiting, onExited: onExited }) : this.renderBody(children, clsPrefix),
