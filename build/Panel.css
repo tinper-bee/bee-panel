@@ -151,3 +151,11 @@
     border-bottom: 0; }
   .u-panel-group .u-panel-heading + .u-panel-collapse > .list-group, .u-panel-group .u-panel-group .u-panel-heading + .u-panel-collapse > .u-panel-body {
     border-top: 1px solid #ddd; }
+
+@media (max-width: 768px) {
+  .u-panel .u-panel-heading {
+    padding: 3px 5px; }
+  .u-panel .u-panel-body {
+    padding: 5px 5px; }
+  .u-panel .u-panel-footer {
+    padding: 3px 5px; } }
