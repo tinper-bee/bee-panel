@@ -16,7 +16,7 @@ class Demo3 extends Component {
         return (
 
             <Row>
-                <Col md={8} mdOffset={2}>
+                <Col md={4} mdOffset={2}>
                     <Button colors="primary" onClick={ ()=> this.setState({ open: !this.state.open })}>
                       click
                     </Button>

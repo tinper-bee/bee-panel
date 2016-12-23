@@ -113,7 +113,6 @@ class Panel extends React.Component {
       <a
         role={role}
         href={id && `#${id}`}
-        onClick={this.handleClickTitle}
         aria-controls={id}
         aria-expanded={expanded}
         aria-selected={expanded}
@@ -231,7 +230,7 @@ class Panel extends React.Component {
         id={collapsible ? null : id}
       >
         {header && (
-          <div className={classnames(headerClass)} style={headerStyle}>
+          <div className={classnames(headerClass)} style={headerStyle} onClick={ this.handleClickTitle }>
             {this.renderHeader(
               collapsible, header, id, headerRole, expanded, clsPrefix
             )}

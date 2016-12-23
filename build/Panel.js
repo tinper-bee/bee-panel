@@ -147,7 +147,6 @@ var Panel = function (_React$Component) {
       {
         role: role,
         href: id && '#' + id,
-        onClick: this.handleClickTitle,
         'aria-controls': id,
         'aria-expanded': expanded,
         'aria-selected': expanded,
@@ -264,7 +263,7 @@ var Panel = function (_React$Component) {
       }),
       header && _react2["default"].createElement(
         'div',
-        { className: (0, _classnames2["default"])(headerClass), style: headerStyle },
+        { className: (0, _classnames2["default"])(headerClass), style: headerStyle, onClick: this.handleClickTitle },
         this.renderHeader(collapsible, header, id, headerRole, expanded, clsPrefix)
       ),
       collapsible ? this.renderCollapsibleBody(id, expanded, panelRole, children, clsPrefix, { onEnter: onEnter, onEntering: onEntering, onEntered: onEntered, onExit: onExit, onExiting: onExiting, onExited: onExited }) : this.renderBody(children, clsPrefix),
