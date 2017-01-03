@@ -1,7 +1,7 @@
 /**
  *
  * @title 默认的展示板
- * @description 使用<Row>组件和<Col>组件进行页面栅格切分
+ * @description 默认的展示板由header,body和footer组成。
  *
  */
 
