@@ -714,6 +714,7 @@
   .u-panel-group .u-panel + .u-panel {
     margin-top: 5px; }
   .u-panel-group .u-panel-heading {
-    border-bottom: 0; }
+    border-bottom: 0;
+    cursor: pointer; }
   .u-panel-group .u-panel-heading + .u-panel-collapse > .list-group, .u-panel-group .u-panel-group .u-panel-heading + .u-panel-collapse > .u-panel-body {
     border-top: 1px solid #ddd; }
