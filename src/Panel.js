@@ -202,6 +202,7 @@ class Panel extends React.Component {
       onEntered,
       clsPrefix,
       onExit,
+      headerContent,
       style,
       onExiting,
       onExited,
