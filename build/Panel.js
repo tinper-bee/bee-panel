@@ -221,32 +221,33 @@ var Panel = function (_React$Component) {
   };
 
   Panel.prototype.render = function render() {
-    var _props = this.props,
-        collapsible = _props.collapsible,
-        header = _props.header,
-        id = _props.id,
-        footer = _props.footer,
-        propsExpanded = _props.expanded,
-        footerStyle = _props.footerStyle,
-        headerStyle = _props.headerStyle,
-        headerRole = _props.headerRole,
-        panelRole = _props.panelRole,
-        className = _props.className,
-        colors = _props.colors,
-        children = _props.children,
-        onEnter = _props.onEnter,
-        onEntering = _props.onEntering,
-        onEntered = _props.onEntered,
-        clsPrefix = _props.clsPrefix,
-        onExit = _props.onExit,
-        headerContent = _props.headerContent,
-        style = _props.style,
-        onExiting = _props.onExiting,
-        onExited = _props.onExited,
-        defaultExpanded = _props.defaultExpanded,
-        eventKey = _props.eventKey,
-        onSelect = _props.onSelect,
-        props = _objectWithoutProperties(_props, ['collapsible', 'header', 'id', 'footer', 'expanded', 'footerStyle', 'headerStyle', 'headerRole', 'panelRole', 'className', 'colors', 'children', 'onEnter', 'onEntering', 'onEntered', 'clsPrefix', 'onExit', 'headerContent', 'style', 'onExiting', 'onExited', 'defaultExpanded', 'eventKey', 'onSelect']);
+    var _props = this.props;
+    var collapsible = _props.collapsible;
+    var header = _props.header;
+    var id = _props.id;
+    var footer = _props.footer;
+    var propsExpanded = _props.expanded;
+    var footerStyle = _props.footerStyle;
+    var headerStyle = _props.headerStyle;
+    var headerRole = _props.headerRole;
+    var panelRole = _props.panelRole;
+    var className = _props.className;
+    var colors = _props.colors;
+    var children = _props.children;
+    var onEnter = _props.onEnter;
+    var onEntering = _props.onEntering;
+    var onEntered = _props.onEntered;
+    var clsPrefix = _props.clsPrefix;
+    var onExit = _props.onExit;
+    var headerContent = _props.headerContent;
+    var style = _props.style;
+    var onExiting = _props.onExiting;
+    var onExited = _props.onExited;
+    var defaultExpanded = _props.defaultExpanded;
+    var eventKey = _props.eventKey;
+    var onSelect = _props.onSelect;
+
+    var props = _objectWithoutProperties(_props, ['collapsible', 'header', 'id', 'footer', 'expanded', 'footerStyle', 'headerStyle', 'headerRole', 'panelRole', 'className', 'colors', 'children', 'onEnter', 'onEntering', 'onEntered', 'clsPrefix', 'onExit', 'headerContent', 'style', 'onExiting', 'onExited', 'defaultExpanded', 'eventKey', 'onSelect']);
 
     var expanded = propsExpanded != null ? propsExpanded : this.state.expanded;
 
