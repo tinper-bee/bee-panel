@@ -203,7 +203,6 @@ class Panel extends React.Component {
       clsPrefix,
       onExit,
       headerContent,
-      style,
       onExiting,
       onExited,
       defaultExpanded,

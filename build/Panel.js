@@ -240,14 +240,13 @@ var Panel = function (_React$Component) {
     var clsPrefix = _props.clsPrefix;
     var onExit = _props.onExit;
     var headerContent = _props.headerContent;
-    var style = _props.style;
     var onExiting = _props.onExiting;
     var onExited = _props.onExited;
     var defaultExpanded = _props.defaultExpanded;
     var eventKey = _props.eventKey;
     var onSelect = _props.onSelect;
 
-    var props = _objectWithoutProperties(_props, ['collapsible', 'header', 'id', 'footer', 'expanded', 'footerStyle', 'headerStyle', 'headerRole', 'panelRole', 'className', 'colors', 'children', 'onEnter', 'onEntering', 'onEntered', 'clsPrefix', 'onExit', 'headerContent', 'style', 'onExiting', 'onExited', 'defaultExpanded', 'eventKey', 'onSelect']);
+    var props = _objectWithoutProperties(_props, ['collapsible', 'header', 'id', 'footer', 'expanded', 'footerStyle', 'headerStyle', 'headerRole', 'panelRole', 'className', 'colors', 'children', 'onEnter', 'onEntering', 'onEntered', 'clsPrefix', 'onExit', 'headerContent', 'onExiting', 'onExited', 'defaultExpanded', 'eventKey', 'onSelect']);
 
     var expanded = propsExpanded != null ? propsExpanded : this.state.expanded;
 
