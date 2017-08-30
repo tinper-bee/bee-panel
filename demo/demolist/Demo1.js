@@ -5,6 +5,12 @@
  *
  */
 
+import React, { Component } from 'react';
+import { Con, Row, Col } from 'bee-layout';
+import { Panel, PanelGroup } from '../../src';
+
+
+
 class Demo1 extends Component {
     render () {
         return (
@@ -19,3 +25,6 @@ class Demo1 extends Component {
         )
     }
 }
+
+
+export default Demo1;

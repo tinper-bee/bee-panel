@@ -5,6 +5,12 @@
  *
  */
 
+import React, { Component } from 'react';
+import { Row, Col } from 'bee-layout';
+import { Panel, PanelGroup } from '../../src';
+import Button from 'bee-button';
+
+
 class Demo3 extends Component {
     constructor(...args) {
       super(...args);
@@ -28,3 +34,5 @@ class Demo3 extends Component {
         )
     }
 }
+
+export default Demo3;
