@@ -1,19 +1,19 @@
 import classNames from 'classnames';
 import React, { cloneElement } from 'react';
-
+import PropTypes from 'prop-types';
 import { createChainedFunction } from 'tinper-bee-core';
 
 
 const propTypes = {
     //是否是手风琴效果
-  accordion: React.PropTypes.bool,
+  accordion: PropTypes.bool,
   //激活的项
-  activeKey: React.PropTypes.any,
+  activeKey: PropTypes.any,
   //默认的激活的项
-  defaultActiveKey: React.PropTypes.any,
+  defaultActiveKey: PropTypes.any,
   //选中函数
-  onSelect: React.PropTypes.func,
-  role: React.PropTypes.string,
+  onSelect: PropTypes.func,
+  role: PropTypes.string,
 };
 
 const defaultProps = {

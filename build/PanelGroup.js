@@ -14,6 +14,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _tinperBeeCore = require('tinper-bee-core');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
@@ -30,14 +34,14 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 var propTypes = {
   //是否是手风琴效果
-  accordion: _react2["default"].PropTypes.bool,
+  accordion: _propTypes2["default"].bool,
   //激活的项
-  activeKey: _react2["default"].PropTypes.any,
+  activeKey: _propTypes2["default"].any,
   //默认的激活的项
-  defaultActiveKey: _react2["default"].PropTypes.any,
+  defaultActiveKey: _propTypes2["default"].any,
   //选中函数
-  onSelect: _react2["default"].PropTypes.func,
-  role: _react2["default"].PropTypes.string
+  onSelect: _propTypes2["default"].func,
+  role: _propTypes2["default"].string
 };
 
 var defaultProps = {

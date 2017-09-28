@@ -2,42 +2,42 @@ import classnames from 'classnames';
 import React, { cloneElement } from 'react';
 
 import { Collapse } from 'bee-transition';
-
+import PropTypes from 'prop-types';
 
 
 
 const propTypes = {
     //是否添加折叠
-  collapsible: React.PropTypes.bool,
-  onSelect: React.PropTypes.func,
+  collapsible: PropTypes.bool,
+  onSelect: PropTypes.func,
   //头部组件
-  header: React.PropTypes.node,
-  headerStyle: React.PropTypes.object,
-  id: React.PropTypes.oneOfType([
-    React.PropTypes.string, React.PropTypes.number,
+  header: PropTypes.node,
+  headerStyle: PropTypes.object,
+  id: PropTypes.oneOfType([
+    PropTypes.string, PropTypes.number,
   ]),
-  headerContent: React.PropTypes.bool,
+  headerContent: PropTypes.bool,
   //footer组件
-  footer: React.PropTypes.node,
-  footerStyle: React.PropTypes.object,
+  footer: PropTypes.node,
+  footerStyle: PropTypes.object,
   //默认是否打开
-  defaultExpanded: React.PropTypes.bool,
+  defaultExpanded: PropTypes.bool,
   //是否打开
-  expanded: React.PropTypes.bool,
+  expanded: PropTypes.bool,
   //每个panel的标记
-  eventKey: React.PropTypes.any,
-  headerRole: React.PropTypes.string,
-  panelRole: React.PropTypes.string,
+  eventKey: PropTypes.any,
+  headerRole: PropTypes.string,
+  panelRole: PropTypes.string,
   //颜色
-  colors: React.PropTypes.oneOf(['primary', 'accent', 'success', 'info', 'warning', 'danger','default','bordered']),
+  colors: PropTypes.oneOf(['primary', 'accent', 'success', 'info', 'warning', 'danger','default','bordered']),
 
   // From Collapse.的扩展动画
-  onEnter: React.PropTypes.func,
-  onEntering: React.PropTypes.func,
-  onEntered: React.PropTypes.func,
-  onExit: React.PropTypes.func,
-  onExiting: React.PropTypes.func,
-  onExited: React.PropTypes.func,
+  onEnter: PropTypes.func,
+  onEntering: PropTypes.func,
+  onEntered: PropTypes.func,
+  onExit: PropTypes.func,
+  onExiting: PropTypes.func,
+  onExited: PropTypes.func,
 };
 
 const defaultProps = {

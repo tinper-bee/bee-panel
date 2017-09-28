@@ -16,6 +16,10 @@ var _react2 = _interopRequireDefault(_react);
 
 var _beeTransition = require('bee-transition');
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _defaults(obj, defaults) { var keys = Object.getOwnPropertyNames(defaults); for (var i = 0; i < keys.length; i++) { var key = keys[i]; var value = Object.getOwnPropertyDescriptor(defaults, key); if (value && value.configurable && obj[key] === undefined) { Object.defineProperty(obj, key, value); } } return obj; }
@@ -32,34 +36,34 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 var propTypes = {
   //是否添加折叠
-  collapsible: _react2["default"].PropTypes.bool,
-  onSelect: _react2["default"].PropTypes.func,
+  collapsible: _propTypes2["default"].bool,
+  onSelect: _propTypes2["default"].func,
   //头部组件
-  header: _react2["default"].PropTypes.node,
-  headerStyle: _react2["default"].PropTypes.object,
-  id: _react2["default"].PropTypes.oneOfType([_react2["default"].PropTypes.string, _react2["default"].PropTypes.number]),
-  headerContent: _react2["default"].PropTypes.bool,
+  header: _propTypes2["default"].node,
+  headerStyle: _propTypes2["default"].object,
+  id: _propTypes2["default"].oneOfType([_propTypes2["default"].string, _propTypes2["default"].number]),
+  headerContent: _propTypes2["default"].bool,
   //footer组件
-  footer: _react2["default"].PropTypes.node,
-  footerStyle: _react2["default"].PropTypes.object,
+  footer: _propTypes2["default"].node,
+  footerStyle: _propTypes2["default"].object,
   //默认是否打开
-  defaultExpanded: _react2["default"].PropTypes.bool,
+  defaultExpanded: _propTypes2["default"].bool,
   //是否打开
-  expanded: _react2["default"].PropTypes.bool,
+  expanded: _propTypes2["default"].bool,
   //每个panel的标记
-  eventKey: _react2["default"].PropTypes.any,
-  headerRole: _react2["default"].PropTypes.string,
-  panelRole: _react2["default"].PropTypes.string,
+  eventKey: _propTypes2["default"].any,
+  headerRole: _propTypes2["default"].string,
+  panelRole: _propTypes2["default"].string,
   //颜色
-  colors: _react2["default"].PropTypes.oneOf(['primary', 'accent', 'success', 'info', 'warning', 'danger', 'default', 'bordered']),
+  colors: _propTypes2["default"].oneOf(['primary', 'accent', 'success', 'info', 'warning', 'danger', 'default', 'bordered']),
 
   // From Collapse.的扩展动画
-  onEnter: _react2["default"].PropTypes.func,
-  onEntering: _react2["default"].PropTypes.func,
-  onEntered: _react2["default"].PropTypes.func,
-  onExit: _react2["default"].PropTypes.func,
-  onExiting: _react2["default"].PropTypes.func,
-  onExited: _react2["default"].PropTypes.func
+  onEnter: _propTypes2["default"].func,
+  onEntering: _propTypes2["default"].func,
+  onEntered: _propTypes2["default"].func,
+  onExit: _propTypes2["default"].func,
+  onExiting: _propTypes2["default"].func,
+  onExited: _propTypes2["default"].func
 };
 
 var defaultProps = {
