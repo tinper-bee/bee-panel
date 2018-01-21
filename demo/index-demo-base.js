@@ -30,11 +30,14 @@ class Demo extends Component {
         let caret = this.state.open ? CARETUP : CARET;
         let text = this.state.open ? "隐藏代码" : "查看代码";
 
-        const footer = (
-            <Button shape="block" onClick={ this.handleClick }>
-                { caret }
-                { text }
-            </Button>
+        const header = (
+            <div>
+                {example}
+                <Button shape="block" onClick={ this.handleClick }>
+                    { caret }
+                    { text }
+                </Button>
+            </div>
         );
 
 
@@ -42,7 +45,7 @@ class Demo extends Component {
             <Col md={12}>
                 <h3>{ title }</h3>
                 <p>{ desc }</p>
-                <Panel collapsible headerContent expanded={ this.state.open } colors='bordered' header={ example } footer={footer} footerStyle = {{padding: 0, borderColor: "transparent"}}>
+                <Panel collapsible headerContent expanded={ this.state.open } colors='bordered' header={ header } footerStyle = {{padding: 0, borderColor: "transparent"}}>
                     <pre><code className="hljs javascript">{ code }</code></pre>
                 </Panel>
             </Col>
