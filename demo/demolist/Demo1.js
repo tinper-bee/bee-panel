@@ -5,22 +5,18 @@
  *
  */
 
-import React, { Component } from 'react';
-import { Con, Row, Col } from 'bee-layout';
-import { Panel, PanelGroup } from '../../src';
-
+import React, {Component} from 'react';
+import {Panel} from '../../src';
 
 
 class Demo1 extends Component {
-    render () {
+    render() {
         return (
-            <Row>
-                <Col md={8} mdOffset={2}>
-                    <Panel header="Panel header" footer='Panel footer'>
-                      Panel content
-                    </Panel>
-                </Col>
-            </Row>
+            <div>
+                <Panel header="Panel header" footer='Panel footer'>
+                    Panel content
+                </Panel>
+            </div>
 
         )
     }

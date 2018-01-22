@@ -5,32 +5,29 @@
  *
  */
 
-import React, { Component } from 'react';
-import { Row, Col } from 'bee-layout';
-import { Panel, PanelGroup } from '../../src';
+import React, {Component} from 'react';
+import {Panel} from '../../src';
 import Button from 'bee-button';
 
 
 class Demo3 extends Component {
     constructor(...args) {
-      super(...args);
-      this.state = {
-        open: true
-      };
+        super(...args);
+        this.state = {
+            open: true
+        };
     }
-    render () {
-        return (
 
-            <Row>
-                <Col md={4} mdOffset={2}>
-                    <Button colors="primary" onClick={ ()=> this.setState({ open: !this.state.open })}>
-                      click
-                    </Button>
-                    <Panel collapsible expanded={this.state.open}>
-                        "来玩躲猫猫啊~~"
-                    </Panel>
-                </Col>
-            </Row>
+    render() {
+        return (
+            <div>
+                <Button colors="primary" onClick={() => this.setState({open: !this.state.open})}>
+                    click
+                </Button>
+                <Panel collapsible expanded={this.state.open}>
+                    "来玩躲猫猫啊~~"
+                </Panel>
+            </div>
         )
     }
 }
