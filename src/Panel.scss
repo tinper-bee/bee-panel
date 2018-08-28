@@ -49,8 +49,21 @@
     .u-panel-body {
         padding: $panel-body-padding;
         position: relative;
+        .uf{
+            position: absolute;
+            right: 25px;
+            top: 30px;
+            color: #fff;
+            font-size: 20px;
+            padding: 2px 8px;
+            margin: 8px;
+            border-radius: 4px;
+            cursor: pointer;
+            &:hover{
+                color: #a8a7a7;
+            }
+        }
     }
-
 }
 
 .u-panel-default{

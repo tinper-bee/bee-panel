@@ -2,7 +2,9 @@ import classnames from 'classnames';
 import React, { cloneElement } from 'react';
 
 import { Collapse } from 'bee-transition';
+import Message from 'bee-message';
 import PropTypes from 'prop-types';
+import copy from 'copy-to-clipboard';
 
 
 
@@ -38,6 +40,8 @@ const propTypes = {
   onExit: PropTypes.func,
   onExiting: PropTypes.func,
   onExited: PropTypes.func,
+  //是否可复制内容
+  copyable : PropTypes.bool
 };
 
 const defaultProps = {
@@ -123,9 +127,17 @@ class Panel extends React.Component {
     );
   }
 
+  //复制代码，弹出提示信息
+  copyDemo(e){
+    let panelTarget = e.target.parentNode;
+    let clipBoardContent = panelTarget.firstChild.innerText;
+    copy(clipBoardContent);
+    Message.create({content: '复制成功！', color: 'success' , duration: 2});
+  }
+
   //如果有折叠动画，渲染折叠动画
   renderCollapsibleBody(
-    id, expanded, role, children, clsPrefix, animationHooks
+    id, expanded, role, children, clsPrefix, copyable,animationHooks
   ) {
     return (
       <Collapse in={expanded} {...animationHooks}>
@@ -135,50 +147,50 @@ class Panel extends React.Component {
           className={`${clsPrefix}-collapse`}
           aria-hidden={!expanded}
         >
-          {this.renderBody(children, clsPrefix)}
+          {this.renderBody(children, clsPrefix ,copyable)}
         </div>
       </Collapse>
     );
   }
 
   //渲染panelbody
-  renderBody(rawChildren, clsPrefix) {
+  renderBody(rawChildren, clsPrefix ,copyable) {
+    let self = this;
     const children = [];
     let bodyChildren = [];
 
     const bodyClassName = `${clsPrefix}-body`;
-
     //添加到body的children中
-    function maybeAddBody() {
+    function maybeAddBody(self) {
       if (!bodyChildren.length) {
         return;
       }
-
       // 给子组件添加key，为了之后触发事件时使用
       children.push(
         <div key={children.length} className={bodyClassName}>
           {bodyChildren}
+          {copyable &&(
+            <i className="uf uf-files-o" onClick={self.copyDemo}></i>
+          )}
         </div>
       );
-
       bodyChildren = [];
     }
 
     //转换为数组，方便复用
     React.Children.toArray(rawChildren).forEach(child => {
       if (React.isValidElement(child) && child.props.fill) {
-        maybeAddBody();
+        maybeAddBody(self);
 
         //将标示fill设置为undefined
         children.push(cloneElement(child, { fill: undefined }));
 
         return;
       }
-
       bodyChildren.push(child);
     });
 
-    maybeAddBody();
+    maybeAddBody(self);
 
     return children;
   }
@@ -208,6 +220,7 @@ class Panel extends React.Component {
       defaultExpanded,
       eventKey,
       onSelect,
+      copyable,
       ...props
     } = this.props;
 
@@ -223,6 +236,7 @@ class Panel extends React.Component {
         [`${clsPrefix}-heading`] : true
     }
 
+    copyable === false ? false : true;
     return (
       <div
         {...props}
@@ -239,10 +253,10 @@ class Panel extends React.Component {
 
         {collapsible ?
           this.renderCollapsibleBody(
-            id, expanded, panelRole, children, clsPrefix,
+            id, expanded, panelRole, children, clsPrefix,copyable,
             { onEnter, onEntering, onEntered, onExit, onExiting, onExited }
           ) :
-          this.renderBody(children, clsPrefix)
+          this.renderBody(children, clsPrefix,copyable)
         }
 
         {footer && (

@@ -16,9 +16,17 @@ var _react2 = _interopRequireDefault(_react);
 
 var _beeTransition = require('bee-transition');
 
+var _beeMessage = require('bee-message');
+
+var _beeMessage2 = _interopRequireDefault(_beeMessage);
+
 var _propTypes = require('prop-types');
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _copyToClipboard = require('copy-to-clipboard');
+
+var _copyToClipboard2 = _interopRequireDefault(_copyToClipboard);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -63,7 +71,9 @@ var propTypes = {
   onEntered: _propTypes2["default"].func,
   onExit: _propTypes2["default"].func,
   onExiting: _propTypes2["default"].func,
-  onExited: _propTypes2["default"].func
+  onExited: _propTypes2["default"].func,
+  //是否可复制内容
+  copyable: _propTypes2["default"].bool
 };
 
 var defaultProps = {
@@ -160,10 +170,20 @@ var Panel = function (_React$Component) {
     );
   };
 
+  //复制代码，弹出提示信息
+
+
+  Panel.prototype.copyDemo = function copyDemo(e) {
+    var panelTarget = e.target.parentNode;
+    var clipBoardContent = panelTarget.firstChild.innerText;
+    (0, _copyToClipboard2["default"])(clipBoardContent);
+    _beeMessage2["default"].create({ content: '复制成功！', color: 'success', duration: 2 });
+  };
+
   //如果有折叠动画，渲染折叠动画
 
 
-  Panel.prototype.renderCollapsibleBody = function renderCollapsibleBody(id, expanded, role, children, clsPrefix, animationHooks) {
+  Panel.prototype.renderCollapsibleBody = function renderCollapsibleBody(id, expanded, role, children, clsPrefix, copyable, animationHooks) {
     return _react2["default"].createElement(
       _beeTransition.Collapse,
       _extends({ 'in': expanded }, animationHooks),
@@ -175,7 +195,7 @@ var Panel = function (_React$Component) {
           className: clsPrefix + '-collapse',
           'aria-hidden': !expanded
         },
-        this.renderBody(children, clsPrefix)
+        this.renderBody(children, clsPrefix, copyable)
       )
     );
   };
@@ -183,43 +203,41 @@ var Panel = function (_React$Component) {
   //渲染panelbody
 
 
-  Panel.prototype.renderBody = function renderBody(rawChildren, clsPrefix) {
+  Panel.prototype.renderBody = function renderBody(rawChildren, clsPrefix, copyable) {
+    var self = this;
     var children = [];
     var bodyChildren = [];
 
     var bodyClassName = clsPrefix + '-body';
-
     //添加到body的children中
-    function maybeAddBody() {
+    function maybeAddBody(self) {
       if (!bodyChildren.length) {
         return;
       }
-
       // 给子组件添加key，为了之后触发事件时使用
       children.push(_react2["default"].createElement(
         'div',
         { key: children.length, className: bodyClassName },
-        bodyChildren
+        bodyChildren,
+        copyable && _react2["default"].createElement('i', { className: 'uf uf-files-o', onClick: self.copyDemo })
       ));
-
       bodyChildren = [];
     }
 
     //转换为数组，方便复用
     _react2["default"].Children.toArray(rawChildren).forEach(function (child) {
       if (_react2["default"].isValidElement(child) && child.props.fill) {
-        maybeAddBody();
+        maybeAddBody(self);
 
         //将标示fill设置为undefined
         children.push((0, _react.cloneElement)(child, { fill: undefined }));
 
         return;
       }
-
       bodyChildren.push(child);
     });
 
-    maybeAddBody();
+    maybeAddBody(self);
 
     return children;
   };
@@ -249,7 +267,8 @@ var Panel = function (_React$Component) {
         defaultExpanded = _props.defaultExpanded,
         eventKey = _props.eventKey,
         onSelect = _props.onSelect,
-        props = _objectWithoutProperties(_props, ['collapsible', 'header', 'id', 'footer', 'expanded', 'footerStyle', 'headerStyle', 'headerRole', 'panelRole', 'className', 'colors', 'children', 'onEnter', 'onEntering', 'onEntered', 'clsPrefix', 'onExit', 'headerContent', 'onExiting', 'onExited', 'defaultExpanded', 'eventKey', 'onSelect']);
+        copyable = _props.copyable,
+        props = _objectWithoutProperties(_props, ['collapsible', 'header', 'id', 'footer', 'expanded', 'footerStyle', 'headerStyle', 'headerRole', 'panelRole', 'className', 'colors', 'children', 'onEnter', 'onEntering', 'onEntered', 'clsPrefix', 'onExit', 'headerContent', 'onExiting', 'onExited', 'defaultExpanded', 'eventKey', 'onSelect', 'copyable']);
 
     var expanded = propsExpanded != null ? propsExpanded : this.state.expanded;
 
@@ -259,6 +278,7 @@ var Panel = function (_React$Component) {
 
     var headerClass = _defineProperty({}, clsPrefix + '-heading', true);
 
+    copyable === false ? false : true;
     return _react2["default"].createElement(
       'div',
       _extends({}, props, {
@@ -270,7 +290,7 @@ var Panel = function (_React$Component) {
         { className: (0, _classnames2["default"])(headerClass), style: headerStyle, onClick: this.handleClickTitle },
         this.renderHeader(collapsible, header, id, headerRole, expanded, clsPrefix)
       ),
-      collapsible ? this.renderCollapsibleBody(id, expanded, panelRole, children, clsPrefix, { onEnter: onEnter, onEntering: onEntering, onEntered: onEntered, onExit: onExit, onExiting: onExiting, onExited: onExited }) : this.renderBody(children, clsPrefix),
+      collapsible ? this.renderCollapsibleBody(id, expanded, panelRole, children, clsPrefix, copyable, { onEnter: onEnter, onEntering: onEntering, onEntered: onEntered, onExit: onExit, onExiting: onExiting, onExited: onExited }) : this.renderBody(children, clsPrefix, copyable),
       footer && _react2["default"].createElement(
         'div',
         { className: clsPrefix + '-footer', style: footerStyle },

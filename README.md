@@ -77,6 +77,7 @@ import "./node_modules/bee-panel/build/Panel.css"
 
 |参数|说明|类型|默认值|
 |:---|:-----|:----|:------|
+|copyable|是否可复制内容|boolean|-|
 |collapsible|是否添加折叠|boolean|-|
 |onSelect|有折叠效果时选中的效果|function|-|
 |defaultExpanded|默认是否打开|boolean|false|
