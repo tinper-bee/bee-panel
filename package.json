@@ -34,7 +34,6 @@
  },
  "dependencies": {
   "babel-runtime": "^6.23.0",
-  "bee-message": "^1.0.4",
   "bee-transition": "latest",
   "classnames": "latest",
   "copy-to-clipboard": "^3.0.8",
@@ -47,6 +46,7 @@
  },
  "devDependencies": {
   "bee-button": "latest",
+  "bee-message": "^1.0.4",
   "bee-layout": "latest",
   "chai": "^3.5.0",
   "console-polyfill": "~0.2.1",
