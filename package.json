@@ -33,6 +33,7 @@
   "pub": "bee-tools run pub"
  },
  "dependencies": {
+  "bee-message": "^1.0.4",
   "babel-runtime": "^6.23.0",
   "bee-transition": "latest",
   "classnames": "latest",
