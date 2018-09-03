@@ -5,19 +5,13 @@
  *
  */
 
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import {Panel} from '../../src';
 
-const code = "\n\nimport React, { Component } from 'react';\nimport Temp from '../../src/index';\n\n class Demo1 extends Component {\n    render () {\n        return (\n            <div className=\"demoPadding\">\n                <Temp >复制这段测试代码</Temp>\n            </div>\n        )\n    }\n}\n\n\n";
+const code = "hello world!";
 
 class Demo4 extends Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            code : code
-        }
-    }
-    render () {
+    render() {
         return (
             <div className="demoPadding">
                 <Panel copyable>
@@ -27,5 +21,6 @@ class Demo4 extends Component {
         )
     }
 }
+
 
 export default Demo4;
