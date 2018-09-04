@@ -8,7 +8,7 @@
 import React, {Component} from 'react';
 import {Panel} from '../../src';
 
-const code = "hello world!";
+const code = "<div>\n  hello world!\n</div>";
 
 class Demo4 extends Component {
     render() {
