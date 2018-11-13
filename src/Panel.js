@@ -170,7 +170,7 @@ class Panel extends React.Component {
         <div key={children.length} className={bodyClassName}>
           {bodyChildren}
           {copyable &&(
-            <i className="uf uf-files-o" onClick={self.copyDemo}></i>
+            <i className={`${clsPrefix}-copy uf uf-files-o`} onClick={self.copyDemo}></i>
           )}
         </div>
       );

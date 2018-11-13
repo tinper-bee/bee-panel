@@ -219,7 +219,7 @@ var Panel = function (_React$Component) {
         'div',
         { key: children.length, className: bodyClassName },
         bodyChildren,
-        copyable && _react2["default"].createElement('i', { className: 'uf uf-files-o', onClick: self.copyDemo })
+        copyable && _react2["default"].createElement('i', { className: clsPrefix + '-copy uf uf-files-o', onClick: self.copyDemo })
       ));
       bodyChildren = [];
     }
