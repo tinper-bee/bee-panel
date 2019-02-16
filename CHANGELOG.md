@@ -1,3 +1,8 @@
+<a name="1.2.14"></a>
+## [1.2.14](https://github.com/tinper-bee/bee-panel/compare/v1.2.13...v1.2.14) (2019-02-16)
+
+
+
 <a name="1.2.13"></a>
 ## [1.2.13](https://github.com/tinper-bee/bee-panel/compare/v1.2.12...v1.2.13) (2018-11-13)
 
