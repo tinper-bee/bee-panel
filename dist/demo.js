@@ -76,7 +76,7 @@
 	
 	var CARETUP = _react2['default'].createElement('i', { className: 'uf uf-arrow-up' });
 	
-	var Demo1 = __webpack_require__(84);var Demo2 = __webpack_require__(85);var Demo3 = __webpack_require__(86);var Demo4 = __webpack_require__(87);var DemoArray = [{ "example": _react2['default'].createElement(Demo1, null), "title": " 默认的展示板", "code": "/**\n *\n * @title 默认的展示板\n * @description 默认的展示板由header,body和footer组成。\n *\n */\n\nimport React, {Component} from 'react';\nimport { Panel } from 'tinper-bee';\n\n\nclass Demo1 extends Component {\n    render() {\n        return (\n            <div>\n                <Panel header=\"Panel header\" footer='Panel footer'>\n                    Panel content\n                </Panel>\n            </div>\n\n        )\n    }\n}\n\n\n\n", "desc": " 默认的展示板由header,body和footer组成。" }, { "example": _react2['default'].createElement(Demo2, null), "title": " 手风琴效果的展示板组", "code": "/**\n *\n * @title 手风琴效果的展示板组\n * @description 使用PanelGroup组件的accordion属性设置手风琴效果\n *\n */\n\nimport React, {Component} from 'react';\nimport { Panel, PanelGroup } from 'tinper-bee';\n\n\nclass Demo2 extends Component {\n    constructor(...args) {\n        super(...args);\n        this.state = {\n            activeKey: '1'\n        };\n        this.handleSelect = this.handleSelect.bind(this);\n    }\n\n    handleSelect(activeKey) {\n        this.setState({activeKey});\n    }\n\n    render() {\n        return (\n            <div>\n\n                <PanelGroup activeKey={this.state.activeKey} onSelect={this.handleSelect} accordion>\n                    <Panel header=\"Panel 1\" eventKey=\"1\">Panel 1 content</Panel>\n                    <Panel header=\"Panel 2\" eventKey=\"2\">Panel 2 content</Panel>\n                </PanelGroup>\n\n            </div>\n        )\n    }\n}\n\n\n", "desc": " 使用PanelGroup组件的accordion属性设置手风琴效果" }, { "example": _react2['default'].createElement(Demo3, null), "title": " 可折叠的展示板", "code": "/**\n *\n * @title 可折叠的展示板\n * @description 设置展示板Panel的collapsible属性设置可折叠\n *\n */\n\nimport React, {Component} from 'react';\nimport { Panel, Button } from 'tinper-bee';\n\n\nclass Demo3 extends Component {\n    constructor(...args) {\n        super(...args);\n        this.state = {\n            open: true\n        };\n    }\n\n    render() {\n        return (\n            <div>\n                <Button colors=\"primary\" onClick={() => this.setState({open: !this.state.open})}>\n                    click\n                </Button>\n                <Panel collapsible expanded={this.state.open}>\n                    \"来玩躲猫猫啊~~\"\n                </Panel>\n            </div>\n        )\n    }\n}\n\n\n", "desc": " 设置展示板Panel的collapsible属性设置可折叠" }, { "example": _react2['default'].createElement(Demo4, null), "title": " 代码示例展示板", "code": "/**\n *\n * @title 代码示例展示板\n * @description 可一键复制代码的展示板\n *\n */\n\nimport React, {Component} from 'react';\nimport { Panel } from 'tinper-bee';\n\nconst code = \"<div>\\n  hello world!\\n</div>\";\n\nclass Demo4 extends Component {\n    render() {\n        return (\n            <div className=\"demoPadding\">\n                <Panel copyable>\n                    <pre><code className=\"hljs javascript\">{code}</code></pre>\n                </Panel>\n            </div>\n        )\n    }\n}\n\n\n", "desc": " 可一键复制代码的展示板" }];
+	var Demo1 = __webpack_require__(84);var Demo2 = __webpack_require__(85);var Demo3 = __webpack_require__(86);var Demo4 = __webpack_require__(87);var DemoArray = [{ "example": _react2['default'].createElement(Demo1, null), "title": " 默认的展示板", "code": "/**\r\n *\r\n * @title 默认的展示板\r\n * @description 默认的展示板由header,body和footer组成。\r\n *\r\n */\r\n\r\nimport React, {Component} from 'react';\r\nimport { Panel } from 'tinper-bee';\r\n\r\n\r\nclass Demo1 extends Component {\r\n    render() {\r\n        return (\r\n            <div>\r\n                <Panel header=\"Panel header\" footer='Panel footer'>\r\n                    Panel content\r\n                </Panel>\r\n            </div>\r\n\r\n        )\r\n    }\r\n}\r\n\r\n\r\n\r\n", "desc": " 默认的展示板由header,body和footer组成。" }, { "example": _react2['default'].createElement(Demo2, null), "title": " 手风琴效果的展示板组", "code": "/**\r\n *\r\n * @title 手风琴效果的展示板组\r\n * @description 使用PanelGroup组件的accordion属性设置手风琴效果\r\n *\r\n */\r\n\r\nimport React, {Component} from 'react';\r\nimport { Panel, PanelGroup } from 'tinper-bee';\r\n\r\n\r\nclass Demo2 extends Component {\r\n    constructor(...args) {\r\n        super(...args);\r\n        this.state = {\r\n            activeKey: '1'\r\n        };\r\n        this.handleSelect = this.handleSelect.bind(this);\r\n    }\r\n\r\n    handleSelect(activeKey) {\r\n        this.setState({activeKey});\r\n    }\r\n\r\n    render() {\r\n        return (\r\n            <div>\r\n\r\n                <PanelGroup activeKey={this.state.activeKey} onSelect={this.handleSelect} accordion>\r\n                    <Panel header=\"Panel 1\" eventKey=\"1\">Panel 1 content</Panel>\r\n                    <Panel header=\"Panel 2\" eventKey=\"2\">Panel 2 content</Panel>\r\n                </PanelGroup>\r\n\r\n            </div>\r\n        )\r\n    }\r\n}\r\n\r\n\r\n", "desc": " 使用PanelGroup组件的accordion属性设置手风琴效果" }, { "example": _react2['default'].createElement(Demo3, null), "title": " 可折叠的展示板", "code": "/**\r\n *\r\n * @title 可折叠的展示板\r\n * @description 设置展示板Panel的collapsible属性设置可折叠\r\n *\r\n */\r\n\r\nimport React, {Component} from 'react';\r\nimport { Panel, Button } from 'tinper-bee';\r\n\n\r\n\r\nclass Demo3 extends Component {\r\n    constructor(...args) {\r\n        super(...args);\r\n        this.state = {\r\n            open: true\r\n        };\r\n    }\r\n\r\n    render() {\r\n        return (\r\n            <div>\r\n                <Button colors=\"primary\" onClick={() => this.setState({open: !this.state.open})}>\r\n                    click\r\n                </Button>\r\n                <Panel collapsible expanded={this.state.open}>\r\n                    \"来玩躲猫猫啊~~\"\r\n                </Panel>\r\n            </div>\r\n        )\r\n    }\r\n}\r\n\r\n\r\n", "desc": " 设置展示板Panel的collapsible属性设置可折叠" }, { "example": _react2['default'].createElement(Demo4, null), "title": " 代码示例展示板", "code": "/**\r\n *\r\n * @title 代码示例展示板\r\n * @description 可一键复制代码的展示板\r\n *\r\n */\r\n\r\nimport React, {Component} from 'react';\r\nimport { Panel } from 'tinper-bee';\r\n\r\nconst code = \"<div>\\n  hello world!\\n</div>\";\r\n\r\nclass Demo4 extends Component {\r\n    render() {\r\n        return (\r\n            <div className=\"demoPadding\">\r\n                <Panel copyable>\r\n                    <pre><code className=\"hljs javascript\">{code}</code></pre>\r\n                </Panel>\r\n            </div>\r\n        )\r\n    }\r\n}\r\n\r\n\r\n", "desc": " 可一键复制代码的展示板" }];
 	
 	var Demo = function (_Component) {
 	    _inherits(Demo, _Component);
@@ -2121,7 +2121,10 @@
 	  }
 	
 	  return (0, _createChainableTypeChecker2.default)(allPropTypes);
-	}
+	} /**
+	   * This source code is quoted from rc-util.
+	   * homepage: https://github.com/react-component/util
+	   */
 
 /***/ }),
 /* 29 */
@@ -2141,6 +2144,10 @@
 	 */
 	
 	// Mostly taken from ReactPropTypes.
+	
+	/* This source code is quoted from rc-util.
+	 * homepage: https://github.com/react-component/util
+	 */
 	
 	function createChainableTypeChecker(validate) {
 	  function checkType(isRequired, props, propName, componentName, location, propFullName) {
@@ -2176,7 +2183,11 @@
 	
 	exports.__esModule = true;
 	
-	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; /**
+	                                                                                                                                                                                                                                                                               * This source code is quoted from rc-util.
+	                                                                                                                                                                                                                                                                               * homepage: https://github.com/react-component/util
+	                                                                                                                                                                                                                                                                               */
+	
 	
 	var _react = __webpack_require__(4);
 	
@@ -2220,8 +2231,10 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	var warned = {};
-	
+	var warned = {}; /**
+	                  * This source code is quoted from rc-util.
+	                  * homepage: https://github.com/react-component/util
+	                  */
 	function deprecated(validator, reason) {
 	  return function validate(props, propName, componentName, location, propFullName) {
 	    var componentNameSafe = componentName || '<<anonymous>>';
@@ -2516,7 +2529,11 @@
 	
 	exports.__esModule = true;
 	
-	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; /**
+	                                                                                                                                                                                                                                                                               * This source code is quoted from rc-util.
+	                                                                                                                                                                                                                                                                               * homepage: https://github.com/react-component/util
+	                                                                                                                                                                                                                                                                               */
+	
 	
 	var _react = __webpack_require__(4);
 	
@@ -2553,6 +2570,10 @@
 	
 	exports.__esModule = true;
 	exports.default = isRequiredForA11y;
+	/**
+	 * This source code is quoted from rc-util.
+	 * homepage: https://github.com/react-component/util
+	 */
 	function isRequiredForA11y(validator) {
 	  return function validate(props, propName, componentName, location, propFullName) {
 	    var componentNameSafe = componentName || '<<anonymous>>';
@@ -2578,6 +2599,10 @@
 	
 	exports.__esModule = true;
 	exports.default = splitComponentProps;
+	/**
+	 * This source code is quoted from rc-util.
+	 * homepage: https://github.com/react-component/util
+	 */
 	function _objectEntries(obj) {
 	  var entries = [];
 	  var keys = Object.keys(obj);
@@ -2620,6 +2645,10 @@
 	'use strict';
 	
 	exports.__esModule = true;
+	/**
+	 * This source code is quoted from rc-util.
+	 * homepage: https://github.com/react-component/util
+	 */
 	function createChainedFunction() {
 	  for (var _len = arguments.length, funcs = Array(_len), _key = 0; _key < _len; _key++) {
 	    funcs[_key] = arguments[_key];
@@ -2652,6 +2681,10 @@
 /* 38 */
 /***/ (function(module, exports) {
 
+	/**
+	 * This source code is quoted from rc-util.
+	 * homepage: https://github.com/react-component/util
+	 */
 	'use strict';
 	
 	/**
@@ -3181,6 +3214,10 @@
 	
 	exports.__esModule = true;
 	exports.default = contains;
+	/**
+	 * This source code is quoted from rc-util.
+	 * homepage: https://github.com/react-component/util
+	 */
 	function contains(root, n) {
 	  var node = n;
 	  while (node) {
@@ -3212,6 +3249,10 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
+	/**
+	 * This source code is quoted from rc-util.
+	 * homepage: https://github.com/react-component/util
+	 */
 	function addEventListenerWrap(target, eventType, cb) {
 	  /* eslint camelcase: 2 */
 	  var callback = _reactDom2.default.unstable_batchedUpdates ? function run(e) {
@@ -3731,7 +3772,11 @@
 	
 	exports.__esModule = true;
 	
-	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; /**
+	                                                                                                                                                                                                                                                                               * This source code is quoted from rc-util.
+	                                                                                                                                                                                                                                                                               * homepage: https://github.com/react-component/util
+	                                                                                                                                                                                                                                                                               */
+	
 	
 	var _Event = __webpack_require__(46);
 	
@@ -3922,6 +3967,10 @@
 	'use strict';
 	
 	exports.__esModule = true;
+	/**
+	 * This source code is quoted from rc-util.
+	 * homepage: https://github.com/react-component/util
+	 */
 	var EVENT_NAME_MAP = {
 	  transitionend: {
 	    transition: 'transitionend',
@@ -4235,7 +4284,10 @@
 	    ret.push(c);
 	  });
 	  return ret;
-	}
+	} /**
+	   * This source code is quoted from rc-util.
+	   * homepage: https://github.com/react-component/util
+	   */
 
 /***/ }),
 /* 50 */
@@ -4271,7 +4323,11 @@
 	
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /**
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * This source code is quoted from rc-util.
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * homepage: https://github.com/react-component/util
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
+	
 	
 	//import isWindow from './isWindow';
 	
@@ -6166,7 +6222,7 @@
 	    });
 	}
 	
-	function notice(content, duration, type, onClose, position, style, keyboard, onEscapeKeyUp) {
+	function notice(content, duration, type, onClose, position, style, keyboard, onEscapeKeyUp, showIcon) {
 	    var iconType = {
 	        info: 'uf uf-i-c-2',
 	        success: 'uf uf-correct',
@@ -6192,11 +6248,11 @@
 	            content: _react2["default"].createElement(
 	                'div',
 	                null,
-	                _react2["default"].createElement(
+	                showIcon ? _react2["default"].createElement(
 	                    'div',
 	                    { className: clsPrefix + '-notice-description-icon' },
 	                    _react2["default"].createElement('i', { className: (0, _classnames2["default"])(iconType) })
-	                ),
+	                ) : null,
 	                _react2["default"].createElement(
 	                    'div',
 	                    { className: clsPrefix + '-notice-description-content' },
@@ -6224,7 +6280,8 @@
 	        var onClose = obj.onClose || noop;
 	        var position = obj.position || "top";
 	        var style = obj.style || {};
-	        return notice(content, duration, color, onClose, position, style, obj.keyboard, obj.onEscapeKeyUp);
+	        var showIcon = obj.showIcon || false;
+	        return notice(content, duration, color, onClose, position, style, obj.keyboard, obj.onEscapeKeyUp, showIcon);
 	    },
 	    config: function config(options) {
 	        if (options.top !== undefined) {
@@ -7800,7 +7857,7 @@
 	    /**
 	     * @title 尺寸
 	     */
-	    size: _propTypes2["default"].oneOf(['sm', 'xg', 'lg']),
+	    size: _propTypes2["default"].oneOf(['sm', 'md', 'xg', 'lg']),
 	    /**
 	     * @title 样式
 	     */
@@ -7814,7 +7871,7 @@
 	    /**
 	    * @title 类型
 	    */
-	    colors: _propTypes2["default"].oneOf(['primary', 'accent', 'success', 'info', 'warning', 'danger', 'default']),
+	    colors: _propTypes2["default"].oneOf(['primary', 'secondary', 'accent', 'success', 'info', 'warning', 'danger', 'dark', 'light', 'default']),
 	    /**
 	     * @title 是否禁用
 	     * @veIgnore
@@ -7844,16 +7901,20 @@
 	
 	var sizeMap = {
 	    sm: 'sm',
+	    md: 'md',
 	    xg: 'xg',
 	    lg: 'lg'
 	},
 	    colorsMap = {
 	    primary: 'primary',
+	    secondary: 'secondary',
 	    accent: 'accent',
 	    success: 'success',
 	    info: 'info',
 	    warning: 'warning',
-	    danger: 'danger'
+	    danger: 'danger',
+	    dark: 'dark',
+	    light: 'light'
 	},
 	    shapeMap = {
 	    block: 'block',
