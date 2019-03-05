@@ -33,7 +33,7 @@
   "pub": "bee-tools run pub"
  },
  "dependencies": {
-  "bee-message": "^1.0.4",
+  "bee-message": "latet",
   "babel-runtime": "^6.23.0",
   "bee-transition": "latest",
   "classnames": "latest",
@@ -47,7 +47,6 @@
  },
  "devDependencies": {
   "bee-button": "latest",
-  "bee-message": "^1.0.4",
   "bee-layout": "latest",
   "chai": "^3.5.0",
   "console-polyfill": "~0.2.1",
