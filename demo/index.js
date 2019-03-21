@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { Con, Row, Col } from 'bee-layout';
-import { Panel } from 'bee-panel';
+import { Panel } from '../src';
 import Drawer from 'bee-drawer';
 import Clipboard from 'bee-clipboard'; 
-import Button from '../src';
 
 
 
